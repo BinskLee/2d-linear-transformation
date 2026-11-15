@@ -1,0 +1,63 @@
+#matrix-panel {
+  position: fixed; /* 캔버스 위에 고정 */
+  top: 16px;
+  left: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 64px); /* 2열 → 2×2 */
+  gap: 8px;
+  padding: 12px;
+  background: rgba(20, 20, 20, 0.8); /* 격자가 살짝 비치게 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+#matrix-panel input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 4px;
+  background: transparent;
+  color: #eee;
+  font:
+    14px ui-monospace,
+    monospace;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  outline: none;
+}
+
+#matrix-panel input:nth-child(odd) {
+  border-color: rgba(74, 222, 128, 0.5);
+} /* î #4ade80 */
+#matrix-panel input:nth-child(even) {
+  border-color: rgba(248, 113, 113, 0.5);
+} /* ĵ #f87171 */
+
+#matrix-panel input:nth-child(odd):focus {
+  border-color: #4ade80;
+}
+#matrix-panel input:nth-child(even):focus {
+  border-color: #f87171;
+}
+#matrix-panel input.invalid {
+  border-color: #facc15;
+  background: rgba(250, 204, 21, 0.1);
+}
+/* 숫자 입력 칸의 위아래 화살표 숨기기 */
+#matrix-panel input::-webkit-inner-spin-button,
+#matrix-panel input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#matrix-panel input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  margin: 0;
+  background: #111;
+}
+
+canvas {
+  display: block;
+}
